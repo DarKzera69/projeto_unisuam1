@@ -16,25 +16,19 @@ body {
     width: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 nav {
     padding: 0 50px;
     width: 100%;
 }
-
+/*
 section {
     width: 100%;
     height: 150vh;
     background: url(../img/messi.jpg)no-repeat center center / cover;
 }
+*/
 .footer{
-    background-color: #31353B;
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 50px;
-    color: white;
-    box-shadow: 0px -20px 45px #31353B;
-    margin-top: 50px;
+ 
 }
 .copy{
     background-color: #212529;
@@ -52,8 +46,6 @@ section {
 .about-footer{
     display: flex;
     flex-direction: column;
-    margin-left: 200px;
-    justify-content: space-between;
     text-align: justify;
     
 }
@@ -63,30 +55,29 @@ section {
     margin-bottom: 20px;
 }
 .about-footer .social-midia-footer svg{
-    margin: 10px;
+    margin: 20px;
     
 }
-.info-footer h4, .other-footer h4,.contact-footer{
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
+.info-footer h4{
     text-align: justify;
     margin-top: 50px;
-   
-    
+    margin-left: 120px;
+}
+.other-footer h4{
+    text-align: justify;
+    margin-top: 50px;
+}
+.contact-footer{
+     margin-top: 50px;
+     margin-left: -50px;
 }
 .info-footer ul li,.other-footer ul li{
-    display: flex;
-    flex-direction: column;
     margin-left: 65px;
     text-align: justify;
-
-   
-    
 }
-.info-footer a, .other-footer a{
+.info-footer a{
     margin-top: 15px;
-    margin-left: 0px;
+    margin-left: 120px;
 }
 .flex li i{
     margin-left: 7px;
@@ -120,10 +111,54 @@ li {
 .footer span{
     margin-left: 10px;
 }
-.info-footer ul li a,.other-footer ul li a{
+.info-footer  li a,.other-footer  li a{
 	transition: all 0.3s ease;
 }
-.info-footer ul li a:hover,.other-footer ul li a:hover{
+.info-footer li a:hover,.other-footer  li a:hover{
 	color: #ffffff;
 	padding-left: 8px;
+}
+/* text*/
+
+footer .footer{
+    display: flex;
+    color: white;
+    flex-direction: row;
+    background-color: #31353B;
+    padding-bottom: 50px;
+    box-shadow: 0px -20px 45px #31353B;
+    margin-top: 50px;
+}
+footer .footer ul{
+    width: 25%;
+}
+footer .footer h3{
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+footer .footer .redes-socias svg{
+    margin-right: 10px;
+}
+footer .footer ul > p {
+    margin-bottom: 40px;
+}
+footer .footer li{
+    margin: 10px 0;
+
+}
+footer .footer a{
+    color: white;
+    text-decoration: none;
+}
+@media (max-width: 960px){
+    footer .footer{
+        flex-direction: column;
+    }
+    footer .footer ul{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .contact-footer,.info-footer a,.info-footer h4{
+        margin-left: 0;
+   }
 }
