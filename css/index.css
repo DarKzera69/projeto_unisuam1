@@ -1,3 +1,4 @@
+/*tudo para o funcionamento do site com qualidade*/
 * {
     margin: 0;
     padding: 0;
@@ -16,24 +17,63 @@ body {
     width: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+.section-header p{
+    color: #666;
+    font-size: 30px;
+}
+/* fim */
+
+/* navbar*/
 nav {
     padding: 0 50px;
     width: 100%;
 }
+.navbar {
+    background-color: #CA1C2A;
+    box-shadow: 0px 5px 20px black;
+    margin-bottom: 15px;
+}
+
+.navbar-nav .nav-item{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    margin-left: 36px;
+    font-weight: 400;
+}
+.navbar .text{
+    color: #fff;
+}
+.navbar .text:hover{
+    color: #0170B9;;
+}
+.logo img{
+    width: 150px;
+    margin-left: 20px;
+}
+/*fim navbar*/
+/*Carrousel*/
 .carrousel{
     margin-bottom: 70px;
 }
-
+/*fim carrousel*/
+/*card*/
 .cards{
     display: flex;
 flex-direction: row;
 justify-content: center;
+
+
 margin-top: 60px;
 
 }
 .cards .card{
     margin-left: 25px;
     background-color: #2383c4;
+    margin-bottom: 100px;
+}
+.card-body h5{
+    margin-left: 50px;
 }
 .card{
     width: 200px;
@@ -60,6 +100,47 @@ margin-top: 60px;
     transform: scale(1.1);
     transition: all ease 0.3s;
 }
+/*fim card*/
+
+/*sobre*/
+.about {
+    background-color: #d1d1d1;
+    
+}
+.about h3,h2,p,.btn{
+    margin-left: 50px;
+}
+.about p{
+    text-align: justify;
+
+    line-height: 24px;
+    color: #666;
+    padding-right: 50px;
+}
+.about h2{
+    text-align: justify;
+    font-size: 24px;
+}
+.about h3{
+    font-size: 20px;
+}
+.about .btn{
+    background-color: #012970;
+    color: white;
+    width: 200px;
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    padding: 15px 40px;
+    border-radius: 4px;
+    line-height: 0;
+    transition: all ease 0.5s;
+    margin-bottom: 20px;
+}
+.about .btn:hover{
+    background-color: #012970;
+    color: white;
+    transform: scale(1.12);
+}
+/*fim sobre*/
 /*
 section {
     width: 100%;
@@ -67,6 +148,8 @@ section {
     background: url(../img/messi.jpg)no-repeat center center / cover;
 }
 */
+
+/* footer*/
 .footer h4,.card-title{
   text-transform: uppercase;
 }
@@ -75,10 +158,7 @@ section {
     height: 40px;
     
 }
-.logo img{
-    width: 150px;
-    margin-left: 20px;
-}
+
 .copy p{
     color: grey;
     padding-top: 5px;
@@ -127,25 +207,6 @@ section {
     margin-left: 7px;
 }
 
-.navbar {
-    background-color: #CA1C2A;
-    box-shadow: 0px 5px 20px black;
-    margin-bottom: 15px;
-}
-
-.navbar-nav .nav-item{
-    text-decoration: none;
-    text-transform: capitalize;
-    font-size: 16px;
-    margin-left: 36px;
-    font-weight: 400;
-}
-.navbar .text{
-    color: #fff;
-}
-.navbar .text:hover{
-    color: #0170B9;;
-}
 li {
     list-style: none;
 }
@@ -191,6 +252,7 @@ footer .footer a{
     color: white;
     text-decoration: none;
 }
+/*fim*/
 @media (max-width: 960px){
     footer .footer{
         flex-direction: column;
@@ -202,4 +264,14 @@ footer .footer a{
     .contact-footer,.info-footer a,.info-footer h4{
         margin-left: 0;
    }
+   .about-footer p,.contact-footer p{
+    margin-left: 0;
+    padding-right: 20px;
+   }
+   .about h2{
+    text-align: justify;
+    font-size: 20px;
+}
+
+
 }
