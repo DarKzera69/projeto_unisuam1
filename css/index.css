@@ -182,6 +182,10 @@ section {
     margin: 20px;
     
 }
+.about-footer p{
+    margin-left: 0px;
+    
+}
 .info-footer h4{
     text-align: justify;
     margin-top: 50px;
@@ -251,6 +255,9 @@ footer .footer li{
 footer .footer a{
     color: white;
     text-decoration: none;
+}
+.contact-footer li p {
+    margin-left: 0;
 }
 /*fim*/
 @media (max-width: 960px){
