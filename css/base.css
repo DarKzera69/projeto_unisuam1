@@ -257,7 +257,17 @@ body.dark {
   }
   
  
+/*font mais e menos*/
+.btn-container{
+    margin-top: 9px;
+    position: relative;
+    left: 110px;
+}
+.btn-container button{
+    background-color: #0170B9;
 
+}
+/*fim*/
 
 /**fim*/
 @media (max-width: 960px){

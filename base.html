@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <div class="logo">
-                <a href=""><img src="img/telecall-logo-white-1.png" alt="" ></a>
+                <a href=""><img src="img/telecall-logo-white-1.png" alt=""></a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,24 +26,30 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
                 <div class="align-self-end">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                       <div class="dark-mod">
-                        <input type="checkbox" class="checkbox" id="chk" />
-                        <label class="label" for="chk">
-                          <i class="fas fa-moon"></i>
-                          <i class="fas fa-sun"></i>
-                          <div class="ball"></div>
-                        </label>
-                       </div>
+                        <div class="btn-container">
+                            <button name="increase-font" id="increase-font" title="Aumentar fonte">A +</button>
+                            <button name="decrease-font" id="decrease-font" title="Diminuir fonte">A -</button>
+                        </div>
+                        <div class="dark-mod">
+                            <input type="checkbox" class="checkbox" id="chk" />
+                            <label class="label" for="chk">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
                         <li class="nav-item inicio"><a class="nav-link text" href="#">Inicio</a></li>
-                        <li class="nav-item sobre"><a class="nav-link text" href="#">Sobre a Telecall</a></li>
+                        <li class="nav-item cpaas ">
+                            <a class="nav-link text">CPaaS</a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">Serviços
+                            <a class="nav-link dropdown-toggle text show" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Serviços
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="ponto"><a class="dropdown-item" href="#">2FA</a></li>
@@ -55,12 +61,14 @@
                                 <li class="co"><a class="dropdown-item" href="#">SMS Programável</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item sobre"><a class="nav-link text" href="#">Sobre a Telecall</a></li>
                         <li class="nav-item cliente ">
                             <a class="nav-link text">Clientes</a>
                         </li>
-                        <li class="nav-item cpaas ">
-                            <a class="nav-link text">CPaaS</a>
+                        <li class="nav-item cliente ">
+                            <a class="nav-link text">Area do cliente</a>
                         </li>
+
                     </ul>
                 </div>
             </div>

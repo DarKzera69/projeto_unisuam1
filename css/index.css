@@ -332,6 +332,7 @@ section {
   
 
 /**fim*/
+
 /* footer*/
 .footer h4,
 .card-title {
@@ -709,7 +710,17 @@ footer .footer a {
 	height: 99%;
 }
 /*fim*/
+/*font mais e menos*/
+.btn-container{
+    margin-top: 9px;
+    position: relative;
+    left: 110px;
+}
+.btn-container button{
+    background-color: #0170B9;
 
+}
+/*fim*/
 @media (min-width: 1024px) {
     .hero {
         background-attachment: fixed;
