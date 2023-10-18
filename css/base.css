@@ -1,4 +1,48 @@
 /*tudo para o funcionamento do site com qualidade*/
+:root {
+    scroll-behavior: smooth;
+  
+    
+    --backcolor: #e7e7e7;
+    --backcolor2: #d1d1d1;
+    --backcolor3: #ebe9e9;
+    --color1blue: #012970;
+    --color2blue: #012970;
+    --color2red: #cd2233;
+    --color2redheader: #cd2233;
+    --color3bluecian: #2383c4;
+    --color4blue2: #022970;
+    --colorblack: #1a1b1b;
+    --colorwhite: #fff;
+    --text-color: #666;
+    --bordercolor: rgba(1, 41, 112, 0.1);
+    --iconcolor: #2383c4; 
+    --mobilenavbar: #022970;
+    --buttoncontact: #1a689c;
+    --navbar: #03328a;
+    
+  }
+  
+  .dark{
+    --backcolor2: #4a4b4e;
+    --text-color: #f2f2f2;
+    --backcolor: #51545c;
+    --backcolor3: #3d3e42;
+    --color1blue: #2383c4;
+    --color2red: #cd2233;
+    --color3bluecian: #2383c4;
+    --color4blue2: #022970;
+    --colorblack: #2383c4;
+    --colorwhite: #fff;
+    --color2blue: #fff;
+    --bordercolor: rgba(200, 217, 248, 0.1);
+    --iconcolor: #fff;
+    --mobilenavbar: #404b50;
+    --buttoncontact: #fff;
+    --navbar: #51545c;
+  }
+
+
 * {
     margin: 0;
     padding: 0;
@@ -160,6 +204,62 @@ footer .footer a{
     text-decoration: none;
 }
 /*fim*/
+/*dark mod*/
+body.dark {
+    background: #292c35;
+  }
+  
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  .label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    margin-top: 10px;
+    padding: 5px;
+    position: relative;
+    height: 25px;
+    width: 45px;
+    transform: scale(1.2);
+    margin-left: 10rem;
+  
+  }
+  
+  
+  .label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: -0.6px;
+    height: 20px;
+    width: 19.5px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .label .ball {
+    transform: translateX(24px);
+  }
+  
+  .fa-moon {
+    color: #f1c40f;
+  }
+  
+  .fa-sun {
+    color: #FFBF00;
+  }
+  
+ 
+
+
+/**fim*/
 @media (max-width: 960px){
     footer .footer{
         flex-direction: column;
