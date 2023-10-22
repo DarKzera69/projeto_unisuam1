@@ -101,15 +101,17 @@
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Login</h4>
 											<div class="form-groupa login ">
-												<input type="email" class="form-style" placeholder="Email">
-												<i class="input-icon uil uil-at"></i>
+												<input type="text" class="form-style" placeholder="Login">
+												<i class="input-icon uil uil-user"></i>
 											</div>
 											<div class="form-groupa mt-4 login">
 												<input type="password" class="form-style " placeholder="Senha">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 
-											<a href="https://www.web-leb.com/code" class="btn mt-4">Login</a>
+											<button class="btn mt-4">
+												<a>Login</a>
+											</button>
 											<p class="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code"
 													class="link">Esqueceu sua senha?</a></p>
 										</div>
@@ -123,22 +125,22 @@
 											<form method="get" action=".">
 												<div class="row">
 													<div
-														class="form-group mt-4 ms-2 col-11 col-md-11 col-lg-6 col-sm-11">
+														class="form-group mt-4 ms-2 col-11 col-md-11 col-lg-5 col-sm-11">
 														<input type="text" class="form-style"
 															placeholder="Nome Completo" minlength="15" maxlength="60"
 															required>
 														<i class="input-icon uil uil-user"></i>
 													</div>
-													<div class="form-group mt-4 ms-1  col-5 col-lg-3 col-md-6 col-sm-6">
+													<div class="form-group mt-4 ms-1  col-6 col-lg-3 col-md-5 col-sm-5">
 														<input type="text" class="form-style"
 															placeholder="Data de Nascimento"
 															onkeypress="$(this).mask('00/00/0000')" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-calendar-alt"></i>
 													</div>
-													<div class="form-group mt-4 ms-1 col-6 col-lg-2 col-md-5 col-sm-5">
-														<input type="text" class="form-style" placeholder="Sexo"
-															required>
-														<i class="input-icon uil uil-user"></i>
+													<div class="form-group mt-4 ms-1 col-5 col-lg-3 col-md-6 col-sm-6">
+														<input type="text" class="form-style" placeholder="Sexo (M,F,ND)"
+														pattern="^(m|f|nd|ND|M|F)$" title="Por favor responda M(masculino), F(Feminino) ou ND (Não Definido)" required>
+														<i class="input-icon uil uil-users-alt"></i>
 													</div>
 												</div>
 												<div class="row">
@@ -161,37 +163,37 @@
 														<input type="text" class="form-style"
 															placeholder="Telefone Celular"
 															onkeypress="$(this).mask('(00) 00000-0009')" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-mobile-android-alt"></i>
 													</div>
 													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-5 col-sm-5">
 														<input type="text" class="form-style"
 															placeholder="Telefone Fixo"
 															onkeypress="$(this).mask('(00) 0000-0000')" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-phone"></i>
 													</div>
 												</div>
 												<div class="row">
 													<div
-														class="form-group mt-4 ms-2 col-10 col-lg-3 col-md-10 col-sm-10">
+														class="form-group mt-4 ms-2 col-11 col-lg-3 col-md-11 col-sm-11">
 														<input type="text" class="form-style" placeholder="CEP"
 															onkeypress="$(this).mask('00000-000')" name="cep" id="cep"
 															value="" onblur="pesquisacep(this.value);" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-location-point"></i>
 													</div>
-													<div class="form-group mt-4 ms-1 col-4 col-lg-3 col-md-4 col-sm-4">
+													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-4 col-sm-4">
 														<input type="text" class="form-style" placeholder="Logradouro"
 															name="rua" id="rua" size="60" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-location-point"></i>
 													</div>
-													<div class="form-group mt-4 ms-1 col-2 col-lg-2 col-md-2 col-sm-2">
+													<div class="form-group mt-4 ms-1 col-5 col-lg-2 col-md-2 col-sm-3">
 														<input type="text" class="form-style" placeholder="Numero"
 															required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-home"></i>
 													</div>
-													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-6 col-sm-6">
+													<div class="form-group mt-4 ms-1 col-11 col-lg-3 col-md-5 col-sm-4">
 														<input type="text" class="form-style" placeholder="Complemento"
 															required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-home"></i>
 													</div>
 												</div>
 												<div class="row">
@@ -199,17 +201,17 @@
 														class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
 														<input type="text" class="form-style" placeholder="Bairro"
 															name="bairro" id="bairro" size="40" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-map"></i>
 													</div>
 													<div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-6 col-sm-6">
 														<input type="text" class="form-style" placeholder="Cidade"
 															name="cidade" id="cidade" size="40" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-map"></i>
 													</div>
 													<div class="form-group mt-4 ms-1  col-6 col-lg-3 col-md-5 col-sm-5">
 														<input type="text" class="form-style" placeholder="UF" name="uf"
 															id="uf" size="2" required>
-														<i class="input-icon uil uil-user"></i>
+														<i class="input-icon uil uil-map"></i>
 													</div>
 												</div>
 												<div class="row">
@@ -219,23 +221,23 @@
 														<i class="input-icon uil uil-user" required></i>
 													</div>
 													<div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-5 col-sm-5">
-														<input type="text" class="form-style" placeholder="Senha"
+														<input type="password" class="form-style" placeholder="Senha"
 															id="password" minlength="8"
 															pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$"
 															title="Deve conter pelo menos um caracter especial, uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres">
-														<i class="input-icon uil uil-user" required></i>
+														<i class="input-icon uil uil-padlock" required></i>
 													</div>
 													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-6 col-sm-6">
-														<input type="text" class="form-style" id="confirm_password"
+														<input type="password" class="form-style" id="confirm_password"
 															minlength="8" placeholder="Confirma Senha">
-														<i class="input-icon uil uil-user" required></i>
+														<i class="input-icon uil uil-padlock" required></i>
 													</div>
 												</div>
 												<script src="js/confirmarsenha.js"></script>
 												<button class="btn mt-4">
 													<a>Cadastrar</a>
 												</button>
-											
+
 											</form>
 										</div>
 									</div>

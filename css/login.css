@@ -200,6 +200,6 @@ margin-left: 24%;
 }
 @media (max-width:991px) {
   .card-front, .card-back {
-      height: 140%;
+      height: 160%;
   }
 }
