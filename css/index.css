@@ -48,6 +48,7 @@
     box-sizing: border-box;
 }
 
+
 .flex {
     display: flex;
     justify-content: space-between;
@@ -472,11 +473,20 @@ footer .footer a {
 .contact-footer li p {
     margin-left: 0;
 }
-
+/*font*/
+.btn-container a{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+.btn-container a:hover{
+    color: black;
+}
+/*fim*/
 /*fim*/
 /*testimonial*/
 
-.wrapper-test {
+/*.wrapper-test {
     background-color: var(--color3bluecian);
     position: relative;
     width: 80vw;
@@ -547,7 +557,70 @@ footer .footer a {
       font-size: 14px;
     }
   }
-  
+  */
+
+  .swiper{
+    width: 100%;
+}
+.swiper-wrapper{
+    width: 100%;
+    height: 35em;
+    display: flex;
+    align-items: center;
+}
+.cardss{
+    width: 10em;
+    height: 90%;
+    background-color: var(--color3bluecian);
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgba(0,0,0,.2);
+    padding: 2em 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 2em;
+}
+.swiper-slide:not(.swiper-slide-active){
+    filter: blur(4px);
+}
+
+.card-image{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 5px solid #CA1C2A;
+    padding: 3px;
+    margin-bottom: 2em;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+ 
+}
+.card_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.card_title{
+    font-size: 1.5em;
+    font-weight: 500;
+    position: relative;
+    color: var(--colorwhite);;
+    top: .2em;
+}
+.card_name{
+    color: var(--colorwhite);;
+    margin-top: 10px;
+}
+.card_text{
+    text-align: center;
+    color: var(--colorwhite);;
+    font-size: 1.1em;
+    margin: 1em 0;
+}
 /*fim*/
 
 /*hero section*/
@@ -822,3 +895,5 @@ footer .footer a {
 
 
 }
+
+
