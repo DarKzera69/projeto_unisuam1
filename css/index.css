@@ -20,6 +20,7 @@
     --mobilenavbar: #022970;
     --buttoncontact: #1a689c;
     --navbar: #03328a;
+    --card: #111;
     
   }
   
@@ -40,6 +41,7 @@
     --mobilenavbar: #404b50;
     --buttoncontact: #fff;
     --navbar: #51545c;
+    --card:#e7e7e7;
   }
 
 * {
@@ -145,18 +147,35 @@ a.nav-link.text {
     margin-bottom: 100px;
 }
 
-.card-body h5 {
-    margin-left: 50px;
+.card img{
+     transition: 0.5s;
+    transform: scale(1.1);
 }
+.card:hover img{
+   transform: scale(1);
+}
+.card2 img{
+    transform: scale(1);
+}
+.card-body h5 {
+    text-align: center;
+}
+.card-body p {
+    text-align: justify;
+    margin: 0px;
+    margin-top: 10px;
+}
+
 
 .card {
     width: 200px;
     align-items: center;
+    
 }
 
-.card:hover {
-    transform: scale(1.08);
-    transition: all ease 0.3s;
+.cards .card:hover {
+
+    box-shadow: 1px 1px 10px 1px var(--card);
 }
 
 .cards .card img {
@@ -345,7 +364,7 @@ section {
     height: 40px;
 
 }
-.social-midia-footer svg{
+.social-midia-footer a svg{
     color: #0170B9;
 }
 .copy p {
@@ -715,11 +734,14 @@ footer .footer a {
 
     color: var(--color1blue);
 }
-.social-midia-contact{
+.social-midia-contact {
     color:var(--color1blue);
     font-size: 25px;
     text-align: left;
     margin-bottom: 20px;
+}
+.social-midia-contact a:hover,.social-midia-contact a{
+    color:var(--color1blue);
 }
 .social-midia-contact svg{
     margin-left: 15px;
