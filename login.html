@@ -128,25 +128,30 @@
 														class="form-group mt-4 ms-2 col-11 col-md-11 col-lg-5 col-sm-11">
 														<input type="text" class="form-style"
 															placeholder="Nome Completo" minlength="15" maxlength="60"
-															required>
+															pattern="^[A-Za-záàâãéèêíïóôõöúç ]+$"
+															title="Apenas letras do alfabeto são permitidas" required>
 														<i class="input-icon uil uil-user"></i>
 													</div>
 													<div class="form-group mt-4 ms-1  col-6 col-lg-3 col-md-5 col-sm-5">
-														<input type="text" class="form-style"
+														<input type="text" class="form-style" id="dataNascimento"
 															placeholder="Data de Nascimento"
-															onkeypress="$(this).mask('00/00/0000')" required>
+															onkeypress="$(this).mask('00/00/0000')" pattern="[0-9 | /]"
+															required>
 														<i class="input-icon uil uil-calendar-alt"></i>
 													</div>
 													<div class="form-group mt-4 ms-1 col-5 col-lg-3 col-md-6 col-sm-6">
-														<input type="text" class="form-style" placeholder="Sexo (M,F,ND)"
-														pattern="^(m|f|nd|ND|M|F)$" title="Por favor responda M(masculino), F(Feminino) ou ND (Não Definido)" required>
+														<input type="text" class="form-style"
+															placeholder="Sexo (M,F,ND)" pattern="^(m|f|nd|ND|M|F)$"
+															title="Por favor responda M(masculino), F(Feminino) ou ND (Não Definido)"
+															required>
 														<i class="input-icon uil uil-users-alt"></i>
 													</div>
 												</div>
 												<div class="row">
 													<div class="form-group mt-4 ms-2 col-11">
 														<input type="text" class="form-style" placeholder="Nome Materno"
-															minlength="15" maxlength="60" required>
+															minlength="15" maxlength="60" pattern="^[A-Za-záàâãéèêíïóôõöúç ]+$"
+															title="Apenas letras do alfabeto são permitidas" required>
 														<i class="input-icon uil uil-user"></i>
 													</div>
 
@@ -154,9 +159,9 @@
 												<div class="row">
 													<div
 														class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
-														<input type="text" class="form-style" placeholder="CPF"
-															onkeypress="$(this).mask('000.000.000-00');" required>
-														<i class="input-icon uil uil-user"></i>
+														<input type="text" class="form-style" placeholder="CPF" id="cpf" name="cpf"
+															onkeypress="$(this).mask('000.000.000-00');" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" title="Digite um CPF válido no formato 999.999.999-99" required>
+														<i class="input-icon uil uil-lock"></i>
 													</div>
 													<div
 														class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-6 col-sm-6 col-sm-6">
@@ -217,20 +222,23 @@
 												<div class="row">
 													<div
 														class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
-														<input type="text" class="form-style" placeholder="Login">
-														<i class="input-icon uil uil-user" required></i>
+														<input type="text" class="form-style" placeholder="Login" minlength="6"
+															maxlength="6" pattern="^[A-Za-záàâãéèêíïóôõöúç]+$"
+															title="Apenas letras do alfabeto são permitidas" required>
+														<i class="input-icon uil uil-user"></i>
 													</div>
 													<div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-5 col-sm-5">
 														<input type="password" class="form-style" placeholder="Senha"
 															id="password" minlength="8"
 															pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$"
-															title="Deve conter pelo menos um caracter especial, uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres">
-														<i class="input-icon uil uil-padlock" required></i>
+															title="Deve conter pelo menos um caracter especial, uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres"
+															required>
+														<i class="input-icon uil uil-padlock"></i>
 													</div>
 													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-6 col-sm-6">
 														<input type="password" class="form-style" id="confirm_password"
-															minlength="8" placeholder="Confirma Senha">
-														<i class="input-icon uil uil-padlock" required></i>
+															minlength="8" placeholder="Confirma Senha" required>
+														<i class="input-icon uil uil-padlock"></i>
 													</div>
 												</div>
 												<script src="js/confirmarsenha.js"></script>
@@ -253,5 +261,96 @@
 		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 		crossorigin="anonymous"></script>
 </body>
+<script>
+	const dataNascimentoInput = document.getElementById('dataNascimento');
+
+	dataNascimentoInput.addEventListener('input', function () {
+		const inputValue = dataNascimentoInput.value;
+		if (validarDataNascimento(inputValue)) {
+			const dataNascimento = new Date(inputValue.split('/').reverse().join('/'));
+			const dataAtual = new Date();
+			if (dataNascimento > dataAtual) {
+				dataNascimentoInput.setCustomValidity('Data de nascimento não pode ser no futuro.');
+			} else {
+				dataNascimentoInput.setCustomValidity('');
+			}
+		} else {
+			dataNascimentoInput.setCustomValidity('Formato de data inválido.');
+		}
+	});
+
+	function validarDataNascimento(data) {
+		const regex = /^\d{2}\/\d{2}\/\d{4}$/;
+		if (!regex.test(data)) {
+			return false;
+		}
+		const [dia, mes, ano] = data.split('/').map(Number);
+		return dia <= 31 && mes <= 12 && ano >= 1923;
+	}
+	const cpfInput = document.getElementById('cpf');
+
+        cpfInput.addEventListener('input', function() {
+            const cpf = cpfInput.value.replace(/[^\d]/g, ''); // Remove caracteres não numéricos
+            if (cpf.length === 11 && !validarCPF(cpf)) {
+                cpfInput.setCustomValidity('CPF inválido');
+            } else {
+                cpfInput.setCustomValidity('');
+            }
+        });
+
+        function validarCPF(cpf) {
+            if (cpf.length !== 11) {
+                return false;
+            }
+
+            // Verifica se todos os dígitos são iguais
+            if (/^(\d)\1{10}$/.test(cpf)) {
+                return false;
+            }
+
+            let numeros = cpf.substring(0, 9);
+            const digitos = cpf.substring(9);
+
+            let soma = 0;
+            let resultado;
+
+            for (let i = 10; i > 1; i--) {
+                soma += parseInt(numeros.charAt(10 - i)) * i;
+            }
+
+            resultado = soma % 11;
+
+            if (resultado === 0 || resultado === 1) {
+                resultado = 0;
+            } else {
+                resultado = 11 - resultado;
+            }
+
+            if (resultado != parseInt(digitos.charAt(0))) {
+                return false;
+            }
+
+            numeros += resultado;
+            soma = 0;
+
+            for (let i = 11; i > 1; i--) {
+                soma += parseInt(numeros.charAt(11 - i)) * i;
+            }
+
+            resultado = soma % 11;
+
+            if (resultado === 0 || resultado === 1) {
+                resultado = 0;
+            } else {
+                resultado = 11 - resultado;
+            }
+
+            if (resultado != parseInt(digitos.charAt(1))) {
+                return false;
+            }
+
+            return true;
+        }
+</script>
 
 </html>
