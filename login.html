@@ -2,355 +2,183 @@
 <html lang="en">
 
 <head>
-	<title>Webleb</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/login.css">
-	<script>
-
-		function limpa_formulário_cep() {
-			//Limpa valores do formulário de cep.
-			document.getElementById('rua').value = ("");
-			document.getElementById('bairro').value = ("");
-			document.getElementById('cidade').value = ("");
-			document.getElementById('uf').value = ("");
-		}
-
-		function meu_callback(conteudo) {
-			if (!("erro" in conteudo)) {
-				//Atualiza os campos com os valores.
-				document.getElementById('rua').value = (conteudo.logradouro);
-				document.getElementById('bairro').value = (conteudo.bairro);
-				document.getElementById('cidade').value = (conteudo.localidade);
-				document.getElementById('uf').value = (conteudo.uf);
-			} //end if.
-			else {
-				//CEP não Encontrado.
-				limpa_formulário_cep();
-				alert("CEP não encontrado.");
-			}
-		}
-
-		function pesquisacep(valor) {
-
-			//Nova variável "cep" somente com dígitos.
-			var cep = valor.replace(/\D/g, '');
-
-			//Verifica se campo cep possui valor informado.
-			if (cep != "") {
-
-				//Expressão regular para validar o CEP.
-				var validacep = /^[0-9]{8}$/;
-
-				//Valida o formato do CEP.
-				if (validacep.test(cep)) {
-
-					//Preenche os campos com "..." enquanto consulta webservice.
-					document.getElementById('rua').value = "...";
-					document.getElementById('bairro').value = "...";
-					document.getElementById('cidade').value = "...";
-					document.getElementById('uf').value = "...";
-
-					//Cria um elemento javascript.
-					var script = document.createElement('script');
-
-					//Sincroniza com o callback.
-					script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
-
-					//Insere script no documento e carrega o conteúdo.
-					document.body.appendChild(script);
-
-				} //end if.
-				else {
-					//cep é inválido.
-					limpa_formulário_cep();
-					alert("Formato de CEP inválido.");
-				}
-			} //end if.
-			else {
-				//cep sem valor, limpa formulário.
-				limpa_formulário_cep();
-			}
-		};
-
-	</script>
+  <title>Webleb</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
-	<div class="section">
-		<div class="container">
-			<div class="row full-height justify-content-center">
-				<div class="col-12 text-center align-self-center py-5 ">
-					<div class="section pb-5 pt-5 pt-sm-2 text-center ">
-						<h6 class="mb-0 pb-3"><span>Login </span><span>Cadastro</span></h6>
-						<input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
-						<label for="reg-log"></label>
-						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Login</h4>
-											<div class="form-groupa login ">
-												<input type="text" class="form-style" placeholder="Login">
-												<i class="input-icon uil uil-user"></i>
-											</div>
-											<div class="form-groupa mt-4 login">
-												<input type="password" class="form-style " placeholder="Senha">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
 
-											<button class="btn mt-4">
-												<a>Login</a>
-											</button>
-											<p class="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code"
-													class="link">Esqueceu sua senha?</a></p>
-										</div>
-									</div>
-								</div>
-								<div class="card-back">
-									<div class="center-wrap">
-										<div class="section text-center">
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
 
-											<h4 class="mb-3 pb-3 ">Cadastro</h4>
-											<form method="get" action=".">
-												<div class="row">
-													<div
-														class="form-group mt-4 ms-2 col-11 col-md-11 col-lg-5 col-sm-11">
-														<input type="text" class="form-style"
-															placeholder="Nome Completo" minlength="15" maxlength="60"
-															pattern="^[A-Za-záàâãéèêíïóôõöúç ]+$"
-															title="Apenas letras do alfabeto são permitidas" required>
-														<i class="input-icon uil uil-user"></i>
-													</div>
-													<div class="form-group mt-4 ms-1  col-6 col-lg-3 col-md-5 col-sm-5">
-														<input type="text" class="form-style" id="dataNascimento"
-															placeholder="Data de Nascimento"
-															onkeypress="$(this).mask('00/00/0000')" pattern="[0-9 | /]"
-															required>
-														<i class="input-icon uil uil-calendar-alt"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-5 col-lg-3 col-md-6 col-sm-6">
-														<input type="text" class="form-style"
-															placeholder="Sexo (M,F,ND)" pattern="^(m|f|nd|ND|M|F)$"
-															title="Por favor responda M(masculino), F(Feminino) ou ND (Não Definido)"
-															required>
-														<i class="input-icon uil uil-users-alt"></i>
-													</div>
-												</div>
-												<div class="row">
-													<div class="form-group mt-4 ms-2 col-11">
-														<input type="text" class="form-style" placeholder="Nome Materno"
-															minlength="15" maxlength="60" pattern="^[A-Za-záàâãéèêíïóôõöúç ]+$"
-															title="Apenas letras do alfabeto são permitidas" required>
-														<i class="input-icon uil uil-user"></i>
-													</div>
-
-												</div>
-												<div class="row">
-													<div
-														class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
-														<input type="text" class="form-style" placeholder="CPF" id="cpf" name="cpf"
-															onkeypress="$(this).mask('000.000.000-00');" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" title="Digite um CPF válido no formato 999.999.999-99" required>
-														<i class="input-icon uil uil-lock"></i>
-													</div>
-													<div
-														class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-6 col-sm-6 col-sm-6">
-														<input type="text" class="form-style"
-															placeholder="Telefone Celular"
-															onkeypress="$(this).mask('(00) 00000-0009')" required>
-														<i class="input-icon uil uil-mobile-android-alt"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-5 col-sm-5">
-														<input type="text" class="form-style"
-															placeholder="Telefone Fixo"
-															onkeypress="$(this).mask('(00) 0000-0000')" required>
-														<i class="input-icon uil uil-phone"></i>
-													</div>
-												</div>
-												<div class="row">
-													<div
-														class="form-group mt-4 ms-2 col-11 col-lg-3 col-md-11 col-sm-11">
-														<input type="text" class="form-style" placeholder="CEP"
-															onkeypress="$(this).mask('00000-000')" name="cep" id="cep"
-															value="" onblur="pesquisacep(this.value);" required>
-														<i class="input-icon uil uil-location-point"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-4 col-sm-4">
-														<input type="text" class="form-style" placeholder="Logradouro"
-															name="rua" id="rua" size="60" required>
-														<i class="input-icon uil uil-location-point"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-5 col-lg-2 col-md-2 col-sm-3">
-														<input type="text" class="form-style" placeholder="Numero"
-															required>
-														<i class="input-icon uil uil-home"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-11 col-lg-3 col-md-5 col-sm-4">
-														<input type="text" class="form-style" placeholder="Complemento"
-															required>
-														<i class="input-icon uil uil-home"></i>
-													</div>
-												</div>
-												<div class="row">
-													<div
-														class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
-														<input type="text" class="form-style" placeholder="Bairro"
-															name="bairro" id="bairro" size="40" required>
-														<i class="input-icon uil uil-map"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-6 col-sm-6">
-														<input type="text" class="form-style" placeholder="Cidade"
-															name="cidade" id="cidade" size="40" required>
-														<i class="input-icon uil uil-map"></i>
-													</div>
-													<div class="form-group mt-4 ms-1  col-6 col-lg-3 col-md-5 col-sm-5">
-														<input type="text" class="form-style" placeholder="UF" name="uf"
-															id="uf" size="2" required>
-														<i class="input-icon uil uil-map"></i>
-													</div>
-												</div>
-												<div class="row">
-													<div
-														class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
-														<input type="text" class="form-style" placeholder="Login" minlength="6"
-															maxlength="6" pattern="^[A-Za-záàâãéèêíïóôõöúç]+$"
-															title="Apenas letras do alfabeto são permitidas" required>
-														<i class="input-icon uil uil-user"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-5 col-sm-5">
-														<input type="password" class="form-style" placeholder="Senha"
-															id="password" minlength="8"
-															pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$"
-															title="Deve conter pelo menos um caracter especial, uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres"
-															required>
-														<i class="input-icon uil uil-padlock"></i>
-													</div>
-													<div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-6 col-sm-6">
-														<input type="password" class="form-style" id="confirm_password"
-															minlength="8" placeholder="Confirma Senha" required>
-														<i class="input-icon uil uil-padlock"></i>
-													</div>
-												</div>
-												<script src="js/confirmarsenha.js"></script>
-												<button class="btn mt-4">
-													<a>Cadastrar</a>
-												</button>
-
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-		crossorigin="anonymous"></script>
-</body>
-<script>
-	const dataNascimentoInput = document.getElementById('dataNascimento');
-
-	dataNascimentoInput.addEventListener('input', function () {
-		const inputValue = dataNascimentoInput.value;
-		if (validarDataNascimento(inputValue)) {
-			const dataNascimento = new Date(inputValue.split('/').reverse().join('/'));
-			const dataAtual = new Date();
-			if (dataNascimento > dataAtual) {
-				dataNascimentoInput.setCustomValidity('Data de nascimento não pode ser no futuro.');
-			} else {
-				dataNascimentoInput.setCustomValidity('');
-			}
-		} else {
-			dataNascimentoInput.setCustomValidity('Formato de data inválido.');
-		}
-	});
-
-	function validarDataNascimento(data) {
-		const regex = /^\d{2}\/\d{2}\/\d{4}$/;
-		if (!regex.test(data)) {
-			return false;
-		}
-		const [dia, mes, ano] = data.split('/').map(Number);
-		return dia <= 31 && mes <= 12 && ano >= 1923;
-	}
-	const cpfInput = document.getElementById('cpf');
-
-        cpfInput.addEventListener('input', function() {
-            const cpf = cpfInput.value.replace(/[^\d]/g, ''); // Remove caracteres não numéricos
-            if (cpf.length === 11 && !validarCPF(cpf)) {
-                cpfInput.setCustomValidity('CPF inválido');
-            } else {
-                cpfInput.setCustomValidity('');
-            }
-        });
-
-        function validarCPF(cpf) {
-            if (cpf.length !== 11) {
-                return false;
-            }
-
-            // Verifica se todos os dígitos são iguais
-            if (/^(\d)\1{10}$/.test(cpf)) {
-                return false;
-            }
-
-            let numeros = cpf.substring(0, 9);
-            const digitos = cpf.substring(9);
-
-            let soma = 0;
-            let resultado;
-
-            for (let i = 10; i > 1; i--) {
-                soma += parseInt(numeros.charAt(10 - i)) * i;
-            }
-
-            resultado = soma % 11;
-
-            if (resultado === 0 || resultado === 1) {
-                resultado = 0;
-            } else {
-                resultado = 11 - resultado;
-            }
-
-            if (resultado != parseInt(digitos.charAt(0))) {
-                return false;
-            }
-
-            numeros += resultado;
-            soma = 0;
-
-            for (let i = 11; i > 1; i--) {
-                soma += parseInt(numeros.charAt(11 - i)) * i;
-            }
-
-            resultado = soma % 11;
-
-            if (resultado === 0 || resultado === 1) {
-                resultado = 0;
-            } else {
-                resultado = 11 - resultado;
-            }
-
-            if (resultado != parseInt(digitos.charAt(1))) {
-                return false;
-            }
-
-            return true;
-        }
-</script>
+            <h6 class="mb-0 pb-3"><span>Login </span><span>Cadastro</span></h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+            <label for="reg-log"></label>
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Login</h4>
+                      <div id="toast" class="toast">
+                        <h4>Você fez login com sucesso!</h4>
+                      </div>
+                      <form action="" name="form" id="form">
+                        <div class="form-groupa login">
+                          <input type="text" class="form-style" placeholder="Login" id="usuario" autocomplete="off"
+                            name="usuario" maxlength="6">
+                          <i class="input-icon uil uil-user"></i>
+                        </div>
+                        <div class="form-groupa mt-4 login">
+                          <input type="password" class="form-style" placeholder="Senha" id="senha" autocomplete="off"
+                            name="senha">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <input type="button" value="Login" onclick="login()" id="btnlogin" class="btn">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-3 pb-3 ">Cadastro</h4>
+                      <div id="toast2" class="toast">
+                        <h4>Cadastrado Com sucesso</h4>
+                      </div>
+                      <form method="get" action=".">
+                        <div class="row ms-3">
+                          <div id="msgerror" class="msgerror"></div>
+                          <div id="msgsucess" class="msgsucess"></div>
+                          <div class="form-group mt-4 ms-2 col-11 col-md-11 col-lg-5 col-sm-11">
+                            <input type="text" class="form-style" autocomplete="off" placeholder="Nome Completo"
+                              minlength="15" maxlength="60" pattern="^[A-Za-záàâãéèêíïóôõöúç ]+$" name="nome" id="nome"
+                              title="Apenas letras do alfabeto são permitidas" required>
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-5 col-sm-5">
+                            <input type="text" class="form-style" placeholder="Data de Nascimento" id="data" name="data"
+                              onkeypress="$(this).mask('00/00/0000')" pattern="[0-9 | /]" required>
+                            <i class="input-icon uil uil-calendar-alt"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-5 col-lg-3 col-md-6 col-sm-6">
+                            <input type="text" class="form-style" name="gender" id="gender" placeholder="Sexo (M,F,ND)"
+                              pattern="^(m|f|nd|ND|M|F)$"
+                              title="Por favor responda M(masculino), F(Feminino) ou ND (Não Definido)" required>
+                            <i class="input-icon uil uil-users-alt"></i>
+                          </div>
+                        </div>
+                        <div class="row ms-3">
+                          <div class="form-group mt-4 ms-2 col-11">
+                            <input type="text" class="form-style" placeholder="Nome Materno" id="mae" name="mae"
+                              minlength="15" maxlength="60" pattern="^[A-Za-záàâãéèêíïóôõöúç ]+$"
+                              title="Apenas letras do alfabeto são permitidas" required>
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                        </div>
+                        <div class="row ms-3">
+                          <div class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
+                            <input type="text" class="form-style" placeholder="CPF" id="cpf" name="cpf"
+                              onkeypress="$(this).mask('000.000.000-00');"
+                              pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                              title="Digite um CPF válido no formato 999.999.999-99" required>
+                            <i class="input-icon uil uil-lock"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-6 col-sm-6 col-sm-6">
+                            <input type="text" class="form-style" placeholder="Telefone Celular" id="celular"
+                              name="celular" onkeypress="$(this).mask('(00) 00000-0009')" required>
+                            <i class="input-icon uil uil-mobile-android-alt"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-5 col-sm-5">
+                            <input type="text" class="form-style" placeholder="Telefone Fixo" id="telefone"
+                              name="telefone" onkeypress="$(this).mask('(00) 0000-0000')" required>
+                            <i class="input-icon uil uil-phone"></i>
+                          </div>
+                        </div>
+                        <div class="row ms-3">
+                          <div class="form-group mt-4 ms-2 col-11 col-lg-3 col-md-11 col-sm-11">
+                            <input type="text" class="form-style" placeholder="CEP"
+                              onkeypress="$(this).mask('00000-000')" name="cep" id="cep" value=""
+                              onblur="pesquisacep(this.value);" required>
+                            <i class="input-icon uil uil-location-point"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-4 col-sm-4">
+                            <input type="text" class="form-style" placeholder="Logradouro" name="rua" id="rua" size="60"
+                              required>
+                            <i class="input-icon uil uil-location-point"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-5 col-lg-2 col-md-2 col-sm-3">
+                            <input type="text" class="form-style" placeholder="Numero" required>
+                            <i class="input-icon uil uil-home"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-11 col-lg-3 col-md-5 col-sm-4">
+                            <input type="text" class="form-style" placeholder="Complemento" required>
+                            <i class="input-icon uil uil-home"></i>
+                          </div>
+                        </div>
+                        <div class="row ms-3">
+                          <div class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
+                            <input type="text" class="form-style" placeholder="Bairro" name="bairro" id="bairro"
+                              size="40" required>
+                            <i class="input-icon uil uil-map"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-6 col-sm-6">
+                            <input type="text" class="form-style" placeholder="Cidade" name="cidade" id="cidade"
+                              size="40" required>
+                            <i class="input-icon uil uil-map"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-5 col-sm-5">
+                            <input type="text" class="form-style" placeholder="UF" name="uf" id="uf" size="2" required>
+                            <i class="input-icon uil uil-map"></i>
+                          </div>
+                        </div>
+                        <div class="row ms-3">
+                          <div class="form-group mt-4 ms-2 col-11 col-lg-4 col-md-11 col-sm-11">
+                            <input type="text" class="form-style" placeholder="Login" minlength="6" maxlength="6"
+                              pattern="^[A-Za-záàâãéèêíïóôõöúç]+$" id="loginre" name="loginre"
+                              title="Apenas letras do alfabeto são permitidas" required>
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-5 col-lg-4 col-md-5 col-sm-5">
+                            <input type="password" class="form-style" placeholder="Senha" id="password" minlength="8"
+                              name="password" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$"
+                              title="Deve conter pelo menos um caracter especial, uma letra maiúscula e minúscula e pelo menos 8 ou mais caracteres"
+                              required>
+                            <i class="input-icon uil uil-padlock"></i>
+                          </div>
+                          <div class="form-group mt-4 ms-1 col-6 col-lg-3 col-md-6 col-sm-6">
+                            <input type="password" class="form-style" id="confirm_password" minlength="8"
+                              placeholder="Confirma Senha" required>
+                            <i class="input-icon uil uil-padlock"></i>
+                          </div>
+                        </div>
+                        <input type="button" value="Registrar" onclick="validate()" class="btn" id="btnregister">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/login.js"> </script>
+  </body>
 
 </html>

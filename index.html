@@ -158,8 +158,8 @@
                                     <a href="#" class="btn btn-light mt-4">Saiba Mais</a>
                                 </div>
                             </div>
-                            <div class="card card2 col-12 col-md-4 col-lg-4  card3" style="width: 22rem;" data-aos="fade-up"
-                                data-aos-delay="600">
+                            <div class="card card2 col-12 col-md-4 col-lg-4  card3" style="width: 22rem;"
+                                data-aos="fade-up" data-aos-delay="600">
                                 <img src="img/card/mobilidade.png" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">mobilidade</h5>
@@ -591,73 +591,8 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script src="js/dk.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
-<script>
-    var $btnAumentar = $("#btnAumentar");
-    var $btnDiminuir = $("#btnDiminuir");
-    var $elemento = $(".content").find("*"); // Encontra todos os elementos dentro do #content
-    var fonts = [];
-    var aumentarCounter = 0;
-    var diminuirCounter = 0;
-
-    function obterTamanhoFonte() {
-        for (var i = 0; i < $elemento.length; i++) {
-            fonts.push(parseFloat($elemento.eq(i).css('font-size')));
-        }
-    }
-    obterTamanhoFonte();
-
-    $btnAumentar.on('click', function () {
-        if (aumentarCounter < 4) {
-            for (var i = 0; i < $elemento.length; i++) {
-                ++fonts[i];
-                $elemento.eq(i).css('font-size', fonts[i]);
-            }
-            aumentarCounter++;
-            diminuirCounter = 0;
-        }
-    });
-
-    $btnDiminuir.on('click', function () {
-        if (diminuirCounter < 4) {
-            for (var i = 0; i < $elemento.length; i++) {
-                --fonts[i];
-                $elemento.eq(i).css('font-size', fonts[i]);
-            }
-            diminuirCounter++;
-            aumentarCounter = 0;
-        }
-    });
-    var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 300,
-            modifier: 1,
-            slideShadows: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-    });
-    function aos_init() {
-        AOS.init({
-            duration: 1000,
-            easing: "ease-in-out",
-            once: true,
-            mirror: false
-        });
-    }
-    window.addEventListener('load', () => {
-        aos_init();
-    })();
-
-</script>
 
 </html>
