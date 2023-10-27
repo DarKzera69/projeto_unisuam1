@@ -199,6 +199,7 @@ margin-left: 24%;
   color: white;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
+
 @media (max-width:991px) {
   .card-front, .card-back {
       height: 160%;
@@ -207,16 +208,6 @@ margin-left: 24%;
 #toast,#toast2{
   color: black;
   height: 100%;
+  width: 100%;
   font-size: 20px;
-  margin-left: 25vh;
-}
-@media (min-width: 768px) and (max-width: 991px){
-  #toast,#toast2{
-    margin-left: 17vh;
-  }
-}
-@media (min-width: 500px) and (max-width: 767px){
-  #toast,#toast2{
-    margin-left: 6vh;
-  }
 }
