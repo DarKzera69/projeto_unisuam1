@@ -73,7 +73,7 @@ const dataAtual = new Date();
 const idadeEmAnos = dataAtual.getFullYear() - dataNascimento.getFullYear();
 
 if (
-idadeEmAnos >= 0 && // Não pode ter nascido no futuro
+idadeEmAnos >= 16 && // Não pode ter nascido no futuro
 idadeEmAnos <= 100 // Idade máxima de 100 anos
 ) {
 return true;

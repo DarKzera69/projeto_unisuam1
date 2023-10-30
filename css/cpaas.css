@@ -917,5 +917,18 @@ footer .footer a {
 
 
 }
-
-
+#hero .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+.cpaas-text h1{
+ color: var(--color1blue);
+}
+.cpaas-text h2{
+    color: var(--colorblack);
+}
+.cpaas-text p,h2{
+ margin-left: 0;
+   }
+   .cpaas-text p {
+    color: var(--buttoncontact);
+   }

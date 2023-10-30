@@ -919,3 +919,44 @@ footer .footer a {
 }
 
 
+.FAT p {
+    margin-left: 0;
+}
+
+.FAT h3 {
+    color: var(--color1blue);
+}
+
+.FAT h4,
+p {
+    color: var(--text-color);
+}
+
+.feture-tabs h3 {
+    color: var(--text-color);
+}
+
+.feture-tabs a {
+    color: var(--color2blue);
+}
+
+.footer p {
+    color: var(--colorwhite);
+}
+
+.text-p p {
+    margin-left: 0;
+}
+
+.text-h3 {
+    color: var(--color1blue);
+}
+
+.text-p h3,
+h4 {
+    color: var(--color3bluecian);
+}
+
+.text-p p {
+    color: var(--text-color);
+}

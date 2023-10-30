@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <link rel="icon" href="img/telecalltitle.png">
+    <title>Telecall</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,7 +25,7 @@
         <nav class="navbar navbar-expand-lg sticky-top">
             <div class="container-fluid">
                 <div class="logo">
-                    <a href=""><img src="img/telecall-logo-white-1.png" class="img-fluid" alt=""></a>
+                    <a href="index.html"><img src="img/telecall-logo-white-1.png" class="img-fluid" alt=""></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -54,22 +55,22 @@
                                     <div class="ball"></div>
                                 </label>
                             </div>
-                            <li class="nav-item inicio"><a class="nav-link text" href="#">Inicio</a></li>
+                            <li class="nav-item inicio"><a class="nav-link text" href="index.html">Inicio</a></li>
                             <li class="nav-item cpaas ">
-                                <a class="nav-link text">CPaaS</a>
+                                <a class="nav-link text" href="#hero-cpaas">CPaaS</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text show" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Serviços
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="ponto"><a class="dropdown-item" href="#">2FA</a></li>
+                                    <li class="ponto"><a class="dropdown-item" href="2fa.html">2FA</a></li>
                                     <hr class="dropdown-divider">
-                                    <li class="mpls"><a class="dropdown-item" href="#">Número Máscara</a></li>
+                                    <li class="mpls"><a class="dropdown-item" href="numero-mask.html">Número Máscara</a></li>
                                     <hr class="dropdown-divider">
-                                    <li class="fibra"><a class="dropdown-item" href="#">Google Verified Calls</a></li>
+                                    <li class="fibra"><a class="dropdown-item" href="google-verified.html">Google Verified Calls</a></li>
                                     <hr class="dropdown-divider">
-                                    <li class="co"><a class="dropdown-item" href="#">SMS Programável</a></li>
+                                    <li class="co"><a class="dropdown-item" href="sms.html">SMS Programável</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item sobre"><a class="nav-link text" href="#">Sobre a Telecall</a></li>
@@ -77,7 +78,7 @@
                                 <a class="nav-link text">Clientes</a>
                             </li>
                             <li class="nav-item cliente ">
-                                <a class="nav-link text">Area do cliente</a>
+                                <a class="nav-link text" href="login.html">Area do cliente</a>
                             </li>
 
                         </ul>
@@ -204,7 +205,7 @@
                 </div>
             </section>
 
-            <section id="hero" class="hero2 d-flex align-items-center">
+            <section id="hero-cpaas" class="hero2 d-flex align-items-center">
                 <div class="container">
                     <div class="row content">
                         <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -220,7 +221,7 @@
                             </h2>
                             <div data-aos="fade-up" data-aos-delay="600">
                                 <div class=" img-cpaas text-center text-lg-start">
-                                    <a href="./Page/cpaas.html"
+                                    <a href="cpaas.html"
                                         class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span>Saiba mais</span>
                                         <i class="bi bi-arrow-right"></i>
@@ -255,7 +256,7 @@
                                     <p class="card-text">O 2FA é um procedimento de segurança que garante que serão
                                         necessários 2 fatores únicos para a liberação de uma ação.
                                     </p>
-                                    <a href="#" class="btn btn-light mt-4">Saiba Mais</a>
+                                    <a href="2fa.html" class="btn btn-light mt-4">Saiba Mais</a>
                                 </div>
                             </div>
                             <div class="card col-12 col-md-3 col-lg-3 " style="width: 22rem;" data-aos="fade-up"
@@ -266,7 +267,7 @@
                                     <p class="card-text">Garanta aos seus clientes a capacidade de fazer chamadas e
                                         enviar mensagens sem expor seus números de telefone pessoais.
                                     </p>
-                                    <a href="#" class="btn btn-light mt-4">Saiba Mais</a>
+                                    <a href="numero-mask.html" class="btn btn-light mt-4">Saiba Mais</a>
                                 </div>
                             </div>
                             <div class="card col-12 col-md-3 col-lg-3  card3" style="width: 22rem;" data-aos="fade-up"
@@ -277,7 +278,7 @@
                                     <p class="card-text">Esse novo recurso do Google, exclusivo para telefones Android,
                                         permite que empresas exibam para o cliente, durante a chamada, sua marca,
                                         logotipo e até mesmo o motivo da chamada.</p>
-                                    <a href="#" class="btn btn-light mt-4">Saiba Mais</a>
+                                    <a href="google-verified.html" class="btn btn-light mt-4">Saiba Mais</a>
                                 </div>
                             </div>
                             <div class="card col-12 col-md-3 col-lg-3  card3" style="width: 22rem;" data-aos="fade-up"
@@ -287,7 +288,7 @@
                                     <h5 class="card-title text-uppercase">sms programável</h5>
                                     <p class="card-text">Uma API que envia mensagens de texto predefinidas impacta
                                         clientes, prospectos ou fornecedores como parte de seu processo comercial.</p>
-                                    <a href="#" class="btn btn-light mt-4">Saiba Mais</a>
+                                    <a href="sms.html" class="btn btn-light mt-4">Saiba Mais</a>
                                 </div>
                             </div>
                         </div>
