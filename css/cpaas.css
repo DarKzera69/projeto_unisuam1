@@ -932,3 +932,8 @@ footer .footer a {
    .cpaas-text p {
     color: var(--buttoncontact);
    }
+   @media (min-width: 961px) and (max-width: 1218px) {
+    .info-footer .infoo{
+        margin-left: -70px;
+    }
+    }

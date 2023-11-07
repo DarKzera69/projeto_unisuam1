@@ -947,3 +947,8 @@ footer .footer a {
 .footer p{
     color: var(--colorwhite);
 }
+@media (min-width: 961px) and (max-width: 1218px) {
+    .info-footer .infoo{
+        margin-left: -70px;
+    }
+    }

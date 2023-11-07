@@ -960,3 +960,8 @@ h4 {
 .text-p p {
     color: var(--text-color);
 }
+@media (min-width: 961px) and (max-width: 1218px) {
+    .info-footer .infoo{
+        margin-left: -70px;
+    }
+    }
