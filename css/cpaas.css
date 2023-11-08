@@ -937,3 +937,21 @@ footer .footer a {
         margin-left: -70px;
     }
     }
+    @media (max-width: 991px){
+        #controle_zoom{
+            margin-left: -75px;
+        }
+        .dark-mod{
+            margin-left: -125px;
+        }
+    }
+    .card-body p{
+        height: 130px;
+    }
+    .card5 p {
+    
+        height: 254px;
+    }
+    .flamengo{
+        margin-top: 20px;
+    }

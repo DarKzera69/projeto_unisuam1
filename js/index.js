@@ -1,38 +1,76 @@
-var $btnAumentar = $("#btnAumentar");
-    var $btnDiminuir = $("#btnDiminuir");
-    var $elemento = $(".content").find("*"); // Encontra todos os elementos dentro do #content
-    var fonts = [];
-    var aumentarCounter = 0;
-    var diminuirCounter = 0;
 
-    function obterTamanhoFonte() {
-        for (var i = 0; i < $elemento.length; i++) {
-            fonts.push(parseFloat($elemento.eq(i).css('font-size')));
-        }
-    }
-    obterTamanhoFonte();
+    let activeFontAccessibility,countAumentar,countDiminuir = false;
 
-    $btnAumentar.on('click', function () {
-        if (aumentarCounter < 4) {
-            for (var i = 0; i < $elemento.length; i++) {
-                ++fonts[i];
-                $elemento.eq(i).css('font-size', fonts[i]);
+    var btnAumentar = jQuery('#btnAumentar');
+    var btnDiminuir = jQuery('#btnDiminuir');
+
+    btnAumentar.on('click', function(){
+        countAumentar = true;
+        countDiminuir = false;
+
+        jQuery(".content").find("*").each(function() {
+            var thisTextElement = jQuery(this);
+            var atualFontSize = parseFloat(thisTextElement.css('font-size'));
+  
+            if (!thisTextElement.data('original-font-size')) {
+
+                thisTextElement.data('original-font-size', atualFontSize);
+                activeFontAccessibility = true;
+
+            } else {
+
+                thisTextElement.css('font-size', '');                
+                thisTextElement.removeData('original-font-size');
+                activeFontAccessibility = false;
+                return;
             }
-            aumentarCounter++;
-            diminuirCounter = 0;
-        }
+
+            if(activeFontAccessibility && countAumentar){
+
+                var newFontSize = atualFontSize + Math.round(atualFontSize * 0.25) / 2;
+                thisTextElement.css('font-size', newFontSize + 'px');
+                
+            }
+            
+        });
+
     });
 
-    $btnDiminuir.on('click', function () {
-        if (diminuirCounter < 4) {
-            for (var i = 0; i < $elemento.length; i++) {
-                --fonts[i];
-                $elemento.eq(i).css('font-size', fonts[i]);
+    btnDiminuir.on('click', function(){
+        countAumentar = false;
+        countDiminuir = true;
+
+        jQuery(".content").find("*").each(function() {
+            var thisTextElement = jQuery(this);
+            var atualFontSize = parseFloat(thisTextElement.css('font-size'));
+  
+            if (!thisTextElement.data('original-font-size')) {
+
+                thisTextElement.data('original-font-size', atualFontSize);
+                activeFontAccessibility = true;
+
+            } else {
+
+                thisTextElement.css('font-size', '');                
+                thisTextElement.removeData('original-font-size');
+                activeFontAccessibility = false;
+                return;
             }
-            diminuirCounter++;
-            aumentarCounter = 0;
-        }
+
+            if(activeFontAccessibility && countDiminuir){
+
+                var newFontSize = atualFontSize + Math.round(atualFontSize * 0.25) - 5;
+                thisTextElement.css('font-size', newFontSize + 'px');
+                
+            }
+            
+        });
+
     });
+    
+
+
+    /** fim font */
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         effect: "coverflow",

@@ -41,8 +41,8 @@
                             <div class="btn-container">
 
                                 <span id="controle_zoom">
-                                    <a href="#" id="a_reset">A</a> | <a href="javascript:void(0);"
-                                        id="btnAumentar">A+</a> | <a href="javascript:void(0);" id="btnDiminuir">A-</a>
+                                    <a href="javascript:void(0);" id="btnAumentar">A+</a> | <a
+                                        href="javascript:void(0);" id="btnDiminuir">A-</a>
                                 </span>
                             </div>
 
@@ -132,14 +132,14 @@
                 </ul>
                 <ul class="info-footer">
                     <div class="infoo">
-                    <h4>informações</h4>
+                        <h4>informações</h4>
 
-                    <li><a href="#">Institucional</a></li>
-                    <li><a href="#">Depoimentos</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Vendas</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </div>
+                        <li><a href="#">Institucional</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Vendas</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </div>
                 </ul>
                 <ul class="other-footer">
                     <h4>Outros</h4>
@@ -191,42 +191,9 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
+<script src="js/index.js"></script>
 <script>
-    var $btnAumentar = $("#btnAumentar");
-    var $btnDiminuir = $("#btnDiminuir");
-    var $elemento = $(".content").find("*"); // Encontra todos os elementos dentro do #content
-    var fonts = [];
-    var aumentarCounter = 0;
-    var diminuirCounter = 0;
-
-    function obterTamanhoFonte() {
-        for (var i = 0; i < $elemento.length; i++) {
-            fonts.push(parseFloat($elemento.eq(i).css('font-size')));
-        }
-    }
-    obterTamanhoFonte();
-
-    $btnAumentar.on('click', function () {
-        if (aumentarCounter < 4) {
-            for (var i = 0; i < $elemento.length; i++) {
-                ++fonts[i];
-                $elemento.eq(i).css('font-size', fonts[i]);
-            }
-            aumentarCounter++;
-            diminuirCounter = 0;
-        }
-    });
-
-    $btnDiminuir.on('click', function () {
-        if (diminuirCounter < 4) {
-            for (var i = 0; i < $elemento.length; i++) {
-                --fonts[i];
-                $elemento.eq(i).css('font-size', fonts[i]);
-            }
-            diminuirCounter++;
-            aumentarCounter = 0;
-        }
-    });
+   
     AOS.init();
 
 </script>
