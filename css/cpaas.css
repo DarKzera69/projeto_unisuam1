@@ -946,12 +946,15 @@ footer .footer a {
         }
     }
     .card-body p{
-        height: 130px;
+        height: 100%;
     }
     .card5 p {
     
-        height: 254px;
+        height: 100%;
     }
     .flamengo{
         margin-top: 20px;
+    }
+    .card5 a{
+        margin-left: -150px;
     }
