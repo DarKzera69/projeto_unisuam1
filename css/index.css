@@ -945,6 +945,12 @@ footer .footer a {
     margin-left: -70px;
 }
 }
+@media (min-width: 1px) and (max-width: 667px) {
+    .card23 .card{
+        margin-left: 0;
+    }
+    }
+
 @media (max-width: 991px){
     #controle_zoom{
         margin-left: -75px;
