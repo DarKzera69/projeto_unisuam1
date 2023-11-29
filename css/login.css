@@ -211,3 +211,10 @@ margin-left: 24%;
   width: 100%;
   font-size: 20px;
 }
+
+@media (min-width: 1px) and (max-width: 667px) {
+  .card-front .section {
+    margin-bottom: 500px;
+  }
+
+}

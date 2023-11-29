@@ -949,6 +949,17 @@ footer .footer a {
     .card23 .card{
         margin-left: 0;
     }
+    
+    }
+ .swiper-wrapper .cardss{
+    width: 50%;
+    height: 100%;
+ }
+ @media (min-width: 1px) and (max-width: 668px) {
+    .swiper-wrapper  .cardss{
+        width: 87%;
+        height: 100%;
+    }
     }
 
 @media (max-width: 991px){
@@ -1002,3 +1013,4 @@ footer .footer a {
 .card5 a{
     margin-left: -150px;
 }
+
