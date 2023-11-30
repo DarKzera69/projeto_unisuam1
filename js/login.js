@@ -95,6 +95,7 @@ const rua = document.getElementById('rua').value;
 const bairro = document.getElementById('bairro').value;
 const cidade = document.getElementById('cidade').value;
 const uf = document.getElementById('uf').value;
+const numero = document.getElementById('numero').value;
 const login = document.getElementById('loginre').value;
 const password = document.getElementById('password').value;
 const confirm_password = document.getElementById('confirm_password').value;
@@ -105,6 +106,9 @@ const cpfNumerico = cpf.replace(/[^\d]/g, ''); // Remove caracteres não numéri
 const genderPattern = /^(m|f|nd|M|F|ND)$/;
 const loginPattern = /^[A-Za-záàâãéèêíïóôõöúç]+$/; // Pattern para login
 
+const nomePattern = /^[a-zA-Záàâãéèêíïóôõöúç]+$/;
+const maePattern = /^[a-zA-Záàâãéèêíïóôõöúç]+$/;
+
 if (
   nome === '' ||
   data === '' ||
@@ -112,6 +116,7 @@ if (
   cpfNumerico === '' ||
   celular === '' ||
   telefone === '' ||
+  numero === '' ||
   cep === '' ||
   rua === '' ||
   bairro === '' ||
@@ -129,13 +134,19 @@ if (
 } else if (!loginPattern.test(login)) {
   showToast2('O campo "login" permite somente letras minusculas.');
   document.getElementById('loginre').focus();
-} else if (!genderPattern.test(gender)) {
+}else if( !nomePattern.test(nome)){
+  showToast2('O campo "nome completo" permite somente letras.');
+}
+else if(   !maePattern.test(mae) ){
+  showToast2('O campo "nome materno" permite somente letras.');
+}
+ else if (!genderPattern.test(gender)) {
   showToast2('O campo "gender" permite somente "m", "f" ou "nd".');
   document.getElementById('gender').focus();
 } else {
   const senhaValida = /^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$/.test(password);
   if (!senhaValida) {
-    showToast2('A senha não atende ao padrão.Mínimo 8 caracteres sendo OBRIGATÓRIO 1 letra maiúscula, 1 minúscula e 1 caracter especial.');
+    showToast2('A senha não atende ao padrão. Mínimo 8 caracteres sendo OBRIGATÓRIO 1 letra maiúscula, 1 minúscula e 1 caracter especial.');
     document.getElementById('password').focus();
     return;
   }
@@ -148,6 +159,7 @@ if (
     cpf: cpfNumerico,
     celular,
     telefone,
+    numero,
     cep,
     rua,
     bairro,
