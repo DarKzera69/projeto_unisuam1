@@ -106,8 +106,8 @@ const cpfNumerico = cpf.replace(/[^\d]/g, ''); // Remove caracteres não numéri
 const genderPattern = /^(m|f|nd|M|F|ND)$/;
 const loginPattern = /^[A-Za-záàâãéèêíïóôõöúç]+$/; // Pattern para login
 
-const nomePattern = /^[a-zA-Záàâãéèêíïóôõöúç]+$/;
-const maePattern = /^[a-zA-Záàâãéèêíïóôõöúç]+$/;
+const nomePattern = /^[a-zA-Záàâãéèêíïóôõöúç ]+$/;
+const maePattern = /^[a-zA-Záàâãéèêíïóôõöúç ]+$/;
 
 if (
   nome === '' ||
