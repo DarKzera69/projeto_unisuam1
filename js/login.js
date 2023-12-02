@@ -5,7 +5,7 @@ function showToast(message) {
 
   setTimeout(function () {
     toast.classList.remove('show'); // Remove a classe após alguns segundos
-  }, 3000); // 3000 milissegundos = 3 segundos
+  }, 5000); // 5000 milissegundos = 3 segundos
 }
 function showToast2(message) {
   const toast = document.getElementById('toast2');
@@ -14,7 +14,7 @@ function showToast2(message) {
 
   setTimeout(function () {
     toast.classList.remove('show'); // Remove a classe após alguns segundos
-  }, 3000); // 3000 milissegundos = 3 segundos
+  }, 5000); // 5000 milissegundos = 3 segundos
 }
 
 // Função para verificar se o localStorage é suportado pelo navegador.
@@ -56,7 +56,7 @@ localStorage.setItem(usuario.login, JSON.stringify(usuario));
 showToast2('Cadastrado com sucesso!');
 setTimeout(function () {
   window.location.href = 'login.html';
-}, 3000);
+}, 5000);
 } else {
 showToast2('LocalStorage não suportado pelo seu navegador. Não é possível criar um usuário.');
 }
@@ -198,7 +198,7 @@ if (storedUser.password === password) {
   showToast('Seja bem-vindo, ' + username + '!');
   setTimeout(function () {
     window.location.href = 'index.html';
-  }, 3000);
+  }, 5000);
 } else {
   showToast('Usuário ou senha incorretos');
   document.getElementById('usuario').focus();

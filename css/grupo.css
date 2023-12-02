@@ -996,3 +996,10 @@ footer .footer a {
 .content{
     color: var(--text-color);
 }
+.sobre-mim h3{
+    margin-left: 50px;
+    
+}
+.sobre-mim p{
+    text-align: justify;
+}
